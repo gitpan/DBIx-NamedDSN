@@ -7,7 +7,7 @@ use vars qw($VERSION $DBI_KEY_NAME %CACHED_DSNS $NAMED_DSN_CONFIG $CONNECT_INFO_
 use Carp;
 use DBI;
 
-$VERSION='0.10';
+$VERSION='0.11';
 $DBI_KEY_NAME='ndsn_name';
 $NAMED_DSN_CONFIG='@NAMED_DSN_CONFIG@';
 $CONNECT_INFO_KEY='ndsn_connection_info';
@@ -53,18 +53,14 @@ sub get_cached_dsn {
     return split(/\t/,$CACHED_DSNS{$name});
 }
 
-1;
-
-package DBI::db;
-
-sub connection_string {
+sub DBI::db::connection_string {
     my $self=shift;
     
     my $hash=tied %$self;
     return $hash->{$DBIx::NamedDSN::CONNECT_INFO_KEY}->{connect_string};
 }
 
-sub ndsn_identifier {
+sub DBI::db::ndsn_identifier {
     my $self=shift;
     
     my $hash=tied %$self;

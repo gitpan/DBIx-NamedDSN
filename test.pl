@@ -2,6 +2,10 @@ use DBI;
 use DBIx::NamedDSN;
 use Test;
 
+BEGIN {
+    plan tests=>5;
+}
+
 print "DBI test connection: ";
 $dsn=readline(STDIN);
 chomp $dsn;

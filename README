@@ -1,4 +1,4 @@
-DBIx-NamedDSN version 0.10
+DBIx-NamedDSN version 0.11
 ==========================
 
 OVERVIEW
@@ -46,8 +46,6 @@ DEPENDENCIES
 No other dependencies, other than DBI.  Not really useful without it.
 
 COPYRIGHT AND LICENCE
-
-Put the correct copyright and licence information here.
 
 Copyright (C) 2004 by David Christensen
 
